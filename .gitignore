@@ -1,2 +1,4 @@
 test
 xlinux
+build/*
+xbuild/*
