@@ -22,14 +22,14 @@ Edit the `Dockerfile` by adding (or removing) apt packages needed for compiling 
 
 Run `docker build`: 
 ```sh
-docker build -t xlinux .
+$ docker build -t xlinux .
 ```
 **NOTE**: the image tag must be `xinux`. If you want to use a different name, also change the value of `CROSSCOMPILE_IMAGE` environment variable in the `Dockerfile`.
 
 By default, an image based on Ubuntu 20.04 is created. If you need an older or newer Ubuntu version, use the following syntax (in this case for 18.04):
 
 ```sh
-docker build --build-arg release=18.04 -t xlinux .
+$ docker build --build-arg release=18.04 -t xlinux .
 ```
 
 ### Third step: create the cross-compile command
