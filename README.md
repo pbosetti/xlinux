@@ -59,6 +59,17 @@ $ ./xlinux cmake -B xbuild
 $ ./xlinux cmake --build xbuild
 ```
 
+## Pre-compiled images
+
+The multiplatform image is also built and uploaded on Docker Hub. You can use it straight away as:
+
+```sh
+docker run --rm p4010/xlinux:latest > xlinux
+chmod a+x xlinux
+```
+
+It will automatically pull your native image.
+
 ## Author
 
 Paolo Bosetti (paolo dot bosetti at unitn dot it)
