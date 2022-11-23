@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
       - name: Build the Docker image
-        run: docker buildx build . --platform=linux/amd64,linux/arm64 --file Dockerfile --tag ${{ secrets.DOCKER_USER }}/xlinux:$(date +%s) --tag ${{ secrets.DOCKER_USER }}/xlinux:latest --push
+        run: docker buildx build . --platform=linux/amd64,linux/arm64 --file Dockerfile --tag ${{ secrets.DOCKER_USER }}/xlinux:$(date +%s) --tag ${{ secrets.DOCKER_USER }}/xlinux:latest --IMAGE_TAG=${{ secrets.DOCKER_USER }}/xlinux --push

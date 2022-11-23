@@ -3,7 +3,7 @@ ARG release=20.04
 FROM ${linux}:${release}
 LABEL maintainer="Paolo Bosetti"
 LABEL description="Docker image for building C/C++"
-ENV CROSSCOMPILE_IMAGE xlinux
+ARG IMAGE_TAG=xlinux
 
 # for tzdata:
 ARG DEBIAN_FRONTEND="noninteractive" 
@@ -18,13 +18,15 @@ RUN apt-get update && apt-get install -y \
     bison flex \ 
     libncurses5-dev libreadline-dev\
     libtool \
-    zsh \
+    sed \
     && apt-get clean autoclean --yes \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 RUN mkdir /workdir; mkdir /cross
 COPY sh/*.sh /cross
+
+ENV IMAGE_TAG=${IMAGE_TAG}
 
 WORKDIR /workdir
 
