@@ -20,9 +20,8 @@ RUN apt-get update && apt-get install -y \
     libtool \
     zsh \
     && apt-get clean autoclean --yes \
-    && apt-get autoremove --yes 
-    # \
-    # && rm -rf /var/lib/{apt,dpkg,cache,log}/
+    && apt-get autoremove --yes \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 RUN mkdir /workdir; mkdir /cross
 COPY sh/*.sh /cross
