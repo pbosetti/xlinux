@@ -1,7 +1,6 @@
 ARG linux=ubuntu
 ARG release=20.04
-ARG platform=amd64
-FROM --platform=${platform} ${linux}:${release}
+FROM ${linux}:${release}
 LABEL maintainer="Paolo Bosetti"
 LABEL description="Docker image for building C/C++"
 ENV CROSSCOMPILE_IMAGE xlinux
